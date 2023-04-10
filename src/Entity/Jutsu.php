@@ -88,7 +88,7 @@ class Jutsu
     private $lore;
 
     /**
-     * @ORM\ManyToOne(targetEntity=voie::class, inversedBy="jutsus")
+     * @ORM\ManyToOne(targetEntity=Voie::class, inversedBy="jutsus")
      */
     private $idVoie;
 

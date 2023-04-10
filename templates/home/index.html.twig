@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="fiche-titre">
+		<hr class="my-4"/>
+		Voies
+		<hr class="my-4"/>
+	</div>
+	<div class="nouveaux container px-4 px-lg-5">
+		{% for voie in voieList %}
+						<!-- Post preview-->
+						<div class="post-preview">
+						
+                         {{voie.name}}
+							
+						</div>
+				</div>
+
+		{% endfor %}
+	</div>
+	<div class="fiche-titre">
+		<hr class="my-4"/>
+		Jutsu
+		<hr class="my-4"/>
+	</div>
+		<div class="nouveaux container px-4 px-lg-5">
+		{% for jutsu in jutsuList %}
+				
+						<!-- Post preview-->
+					<div class="post-preview">	
+                        {{jutsu.name}}
+						{{jutsu.nameInPlugin}}
+						{{jutsu.manaCost}}
+						{{jutsu.needMastery}}
+						{{jutsu.needTarget}}
+						{{jutsu.skillVisibility}}
+						{{jutsu.canBeFullMaster}}
+						{{jutsu.publique}}
+						{{jutsu.itemType}}
+						{{jutsu.level}}
+						{{jutsu.message}}
+						{{jutsu.infoSup}}
+						{{jutsu.mudras}}
+						{{jutsu.lore}}
+						{{jutsu.getIdVoie.name}}
+					</div>
+					<hr class="my-4"/>
+		{% endfor %}
+	</div>
+{% endblock %}
