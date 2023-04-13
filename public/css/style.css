@@ -1,0 +1,132 @@
+.site-heading {
+  color: white;
+}
+
+.masthead{
+  max-height: 15%;
+
+}
+.navbar-nav{
+  flex-direction: row !important;
+}
+
+
+.voie{
+  margin-right: 10px;
+}
+
+
+
+
+
+
+
+
+
+.stockout{
+  background-color: red;
+  color: white;
+  border-radius: 12px;
+  text-align: center;
+  margin-right: auto;
+  padding: 10px;
+  max-width: 50%;
+}
+
+.fiche-titre {
+  font-family: "Dancing Script", cursive;
+  text-align: center;
+  font-size: 26px;
+  position: relative;
+  font-weight: 700;
+  margin: 25px 0px !important;
+}
+
+.my-4{
+    color: #666;
+}
+
+
+.containerprod {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px;
+  box-shadow: 5px 5px 5px 5px lightgray;
+  border-radius: 5px;
+  padding: 30px;
+}
+
+.fiche {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+  
+}
+
+.titre {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+
+.jutsu-text{
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+
+
+
+
+
+
+.btnencours{
+  display: flex;
+  justify-content: center;
+  width: auto;
+  border-radius: 12px;
+  text-decoration: none;
+  background: rgb(216, 153, 35) !important;
+  color: white;
+  padding: 10px;
+}
+
+
+
+.form-login{
+  max-width: 40%;
+  margin: 20px;
+}
+
+label[for="registration_form_email"],
+label[for="registration_form_plainPassword"]
+{
+  margin-left: 20px;
+}
+
+
+.nav-link{
+  border-bottom:transparent solid 2px;
+}
+
+.nav-link:hover{
+  border-bottom:#666 solid 2px;
+}
+
+.emptyList{
+  color: #666;
+  justify-content: center;
+  display: flex;
+  margin: 20px;
+  font-size: larger;
+}
+
+@media screen and (max-width: 800px)
+{
+    .fiche{
+      flex-wrap: wrap;
+    }
+}
+

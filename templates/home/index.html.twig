@@ -6,16 +6,10 @@
 		Voies
 		<hr class="my-4"/>
 	</div>
-	<div class="nouveaux container px-4 px-lg-5">
-		{% for voie in voieList %}
-						<!-- Post preview-->
-						<div class="post-preview">
-						
-                         {{voie.name}}
-							
-						</div>
-				</div>
-
+	<div class="voieList px-4">
+		{% for voie in voieList %}		
+            <span class= "voie">{{voie.name}}	</span>				
+	
 		{% endfor %}
 	</div>
 	<div class="fiche-titre">
@@ -23,26 +17,25 @@
 		Jutsu
 		<hr class="my-4"/>
 	</div>
-		<div class="nouveaux container px-4 px-lg-5">
-		{% for jutsu in jutsuList %}
-				
-						<!-- Post preview-->
-					<div class="post-preview">	
-                        {{jutsu.name}}
-						{{jutsu.nameInPlugin}}
-						{{jutsu.manaCost}}
-						{{jutsu.needMastery}}
-						{{jutsu.needTarget}}
-						{{jutsu.skillVisibility}}
-						{{jutsu.canBeFullMaster}}
-						{{jutsu.publique}}
-						{{jutsu.itemType}}
-						{{jutsu.level}}
-						{{jutsu.message}}
-						{{jutsu.infoSup}}
-						{{jutsu.mudras}}
-						{{jutsu.lore}}
-						{{jutsu.getIdVoie.name}}
+		<div class="container px-4 px-lg-5">
+		{% for jutsu in jutsuList %}			
+						<!-- Jutsu view-->
+					<div class="jutsu">
+                        <span class="titre">Nom: </span>{{jutsu.name}}<br/>
+						<span class="titre">Nom dans le plugin: </span>{{jutsu.nameInPlugin}}<br/>
+						<span class="titre">Cout chakra: </span>{{jutsu.manaCost}}<br/>
+						<span class="titre">Peut etre maitrisé: </span>{{jutsu.needMastery}}<br/>
+						<span class="titre">Cible: </span>{{jutsu.needTarget}}<br/>
+						<span class="titre">visible par autrui: </span>{{jutsu.skillVisibility}}<br/>
+						<span class="titre">Peut etre maitrsier entièrement: </span>{{jutsu.canBeFullMaster}}<br/>
+						<span class="titre">Public: </span>{{jutsu.publique}}<br/>
+						<span class="titre">type item: </span>{{jutsu.itemType}}<br/>
+						<span class="titre">Rang: </span>{{jutsu.level}}<br/>
+						<span class="titre">Description: </span>{{jutsu.message}}<br/>
+						<span class="titre">Description détaillée: </span>{{jutsu.infoSup}}<br/>
+						<span class="titre">Mudras: </span>{{jutsu.mudras}}<br/>
+						<span class="titre">Lore: </span>{{jutsu.lore}}<br/>
+						<span class="titre">Voie du jutsu: </span>{{jutsu.getIdVoie.name}}<br/>
 					</div>
 					<hr class="my-4"/>
 		{% endfor %}
