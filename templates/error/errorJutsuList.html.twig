@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="fiche-titre">
+		<hr class="my-4"/>
+		Voies
+		<hr class="my-4"/>
+	</div>
+	<div class="voieList px-4">
+		{% for voie in voieList %}
+		<a href="/voie/{{voie.id}}">								
+			<span class= "voie">{{voie.name}}</span>				
+		</a>
+		{% endfor %}
+	</div>
+	<hr class="my-4"/>
+	<div class="emptyList">
+		Il y a actuellement moins de jutsu que de reroll de Beny dans cette voie.
+	</div>
+
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="fiche-titre">
+		<hr class="my-4"/>
+		Jutsu {{jutsu.name}}
+		<hr class="my-4"/>
+	</div>
+	<div class="container px-4 px-lg-5">
+					
+						<!-- Jutsu view-->
+					<div class="">
+                        <div class="jutsu-div">
+							<span class="titre">Nom: </span>{{jutsu.name}}
+						</div>
+						<div class="jutsu-div">
+							<span class="titre">Nom dans le plugin: </span>{{jutsu.nameInPlugin}}
+						</div>
+						<div class="jutsu-div">
+							<span class="titre">Cout chakra: </span>{{jutsu.manaCost}}
+						</div>
+						<div class="jutsu-div">
+							<span class="titre">Public: </span>
+							{% if "{{jutsu.publique}}"==1 %}
+                                <span>true</span>
+                            {%else%}
+                                <span>false</span>
+                            {%endif%}
+							
+						</div>
+						<div class="jutsu-div">
+							<span class="titre">Rang: </span>{{jutsu.level}}
+						</div>
+						<div class="jutsu-div">
+							<span class="titre">Mudras: </span>{{jutsu.mudras}}
+						</div>
+						<div class="jutsu-div">
+							<span class="titre">Description du jutsu: </span>{{jutsu.message}}
+						</div>
+                        <div class="jutsu-div">
+							<span class="titre">Description détaillé du jutsu: </span>{{jutsu.infoSup}}
+						</div>
+
+                        <div class="jutsu-div">
+							<span class="titre">Lore du jutsu: </span>{{jutsu.lore}}
+						</div>
+
+                        <div class="jutsu-div">
+							<span class="titre">type d'item du jutsu: </span>{{jutsu.itemType}}
+						</div>
+
+                        <div class="jutsu-div">
+							<span class="titre">Maitrise entière du jutsu: </span>
+							{% if "{{jutsu.canBeFullMaster}}"==1 %}
+                                <span>true</span>
+                            {%else%}
+                                <span>false</span>
+                            {%endif%}	
+						</div>
+
+                        <div class="jutsu-div">
+							<span class="titre">visibilité du jutsu: </span>
+							{% if "{{jutsu.skillVisibility}}"==1 %}
+                                <span>true</span>
+                            {%else%}
+                                <span>false</span>
+                            {%endif%}	
+						</div>
+
+                        <div class="jutsu-div">
+                            <span class="titre"> nécéssite une cible: </span>
+                            {% if "{{jutsu.needTarget}}"==1 %}
+                                <span>true</span>
+                            {%else%}
+                                <span>false</span>
+                            {%endif%}
+                        </div>
+					</div>
+				
+		
+	</div>
+{% endblock %}

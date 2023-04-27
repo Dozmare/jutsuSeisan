@@ -4,6 +4,7 @@
 
 .masthead{
   max-height: 15%;
+  object-fit: cover;
 
 }
 .navbar-nav{
@@ -15,10 +16,38 @@
   margin-right: 10px;
 }
 
+.voieList{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 20%;
+}
+
+.jutsu{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+}
+
+.jutsu-div{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  
+}
+
+.Link{
+  text-decoration: none !important;
+  color: black !important;
+}
 
 
 
-
+.titre {
+  font-weight: bold;
+  text-decoration: underline;
+}
 
 
 
@@ -47,6 +76,12 @@
 }
 
 
+
+
+
+
+
+
 .containerprod {
   display: flex;
   flex-direction: column;
@@ -63,24 +98,6 @@
   margin-bottom: 20px;
   
 }
-
-.titre {
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-
-.jutsu-text{
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-
-
-
-
-
-
 
 .btnencours{
   display: flex;
