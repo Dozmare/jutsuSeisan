@@ -12,6 +12,12 @@
 			<span class= "voie">{{voie.name}}</span>				
 		</a>
 		{% endfor %}
+
+		<div class="sticky top-24">
+            {% include "components/_search_data.html.twig" with {
+                form: form ?? null
+            } only %}
+        </div>
 	</div>
 	<div class="fiche-titre">
 		<hr class="my-4"/>

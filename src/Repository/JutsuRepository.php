@@ -42,17 +42,17 @@ class JutsuRepository extends ServiceEntityRepository
 //    /**
 //     * @return Jutsu[] Returns an array of Jutsu objects
 //     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('j')
-//            ->andWhere('j.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('j.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+   public function findByName($value): array
+   {
+       return $this->createQueryBuilder('j')
+           ->andWhere('j.name LIKE :jutsu')
+           ->setParameter('jutsu', "%$value%")
+           ->orderBy('j.id', 'ASC')
+           ->setMaxResults(10)
+           ->getQuery()
+           ->getResult()
+       ;
+   }
 
 //    public function findOneBySomeField($value): ?Jutsu
 //    {

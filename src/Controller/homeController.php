@@ -4,12 +4,14 @@ namespace App\Controller;
 
 use App\Entity\Jutsu;
 use App\Entity\Voie;
+use App\Form\SearchType;
+use App\Model\SearchData;
 
 use App\Repository\VoieRepository;
 use App\Repository\JutsuRepository;
 
 use Doctrine\ORM\EntityManagerInterface;
-use SebastianBergmann\Environment\Console;
+
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -21,13 +23,28 @@ class homeController extends AbstractController
     /**
      * @Route("/", name="index")
      */
-    public function index(JutsuRepository $jutsu, VoieRepository $voie): Response
+    public function index(JutsuRepository $jutsu, VoieRepository $voie, Request $request): Response
     {
         $jutsuList = $jutsu->findAll();
         $voieList = $voie->findAll();
+        $searchData = new SearchData();
+        $form = $this->createForm(SearchType::class, $searchData);
+
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid()){
+            $jutsuList = $jutsu->findByName($searchData->q);
+            return $this->render('home/index.html.twig', [
+                'controller_name' => 'homeController',
+                'form'=> $form->createView(),
+                'jutsuList' => $jutsuList,
+                'voieList' => $voieList
+            ]);
+            
+        }
 
         return $this->render('home/index.html.twig', [
             'controller_name' => 'homeController',
+            'form'=> $form->createView(),
             'jutsuList' => $jutsuList,
             'voieList' => $voieList
         ]);
@@ -37,7 +54,7 @@ class homeController extends AbstractController
     /**
      * @Route("/jutsu/{jutsuName}", name="jutsu")
      */
-    public function jutsuname(string $jutsuName,JutsuRepository $jutsu, VoieRepository $voie, Request $request,  EntityManagerInterface $entityManager): Response
+    public function jutsuname(string $jutsuName,JutsuRepository $jutsu, VoieRepository $voie,  EntityManagerInterface $entityManager): Response
     {
         $jutsuList = $jutsu->findAll();
         $jutsu= $jutsu ->findOneBy(['name'=>$jutsuName]);
@@ -74,5 +91,7 @@ class homeController extends AbstractController
         };
 
     }
+
+    
 
 }
